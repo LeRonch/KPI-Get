@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import * as Highcharts from 'highcharts';
 
 
 @Component({
@@ -9,6 +10,14 @@ import { DataService } from '../data.service';
 })
 
 export class HomeComponent implements OnInit {
+
+  // Highcharts: typeof Highcharts = Highcharts;
+  // chartOptions: Highcharts.Options = {
+  //   series: [{
+  //     data: [1, 2, 3],
+  //     type: 'line'
+  //   }]
+  // };
 
   public investments = [];
   public displayedColumns = [ 'id' , 'titreoperation', 'lycee', 'ville', 'etat_d_avancement', 'detail'];

@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     FormsModule,
     MatPaginatorModule,
     MatButtonModule,
+    HighchartsChartModule,
     MatCardModule,
     MatProgressSpinnerModule,
     MatListModule
