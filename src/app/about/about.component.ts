@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutComponent implements OnInit {
 
-  public investment = [];
-  
+  investment:any = [];
+
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
   
   public id:string = this.route.snapshot.params['id'].toString();
