@@ -1,0 +1,50 @@
+<div style="padding: 13px;">
+
+    <mat-spinner *ngIf="investments.length === 0"></mat-spinner>
+
+    <p>
+        <input type="text" id="ville" name="ville">
+        <input type="text" id="lycee" name="lycee">
+        <button type="button">Filtrer</button>
+    </p>
+
+    <table mat-table [dataSource]="investments" class="mat-elevation-z8 inv-table">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="titreoperation">
+            <th mat-header-cell *matHeaderCellDef> Titre Opération </th>
+            <td mat-cell *matCellDef="let element"> {{element.titreoperation}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lycee">
+            <th mat-header-cell *matHeaderCellDef> Lycée </th>
+            <td mat-cell *matCellDef="let element"> {{element.lycee}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ville">
+            <th mat-header-cell *matHeaderCellDef> Ville </th>
+            <td mat-cell *matCellDef="let element"> {{element.ville}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="etat_d_avancement">
+            <th mat-header-cell *matHeaderCellDef> État d'avancement </th>
+            <td mat-cell *matCellDef="let element"> {{element.etat_d_avancement}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="detail">
+            <th mat-header-cell *matHeaderCellDef id="detail"> Détails </th>
+            <td mat-cell *matCellDef="let element"> 
+                <button mat-button routerLink="/about">Voir</button> 
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+   
+</div>
