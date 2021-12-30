@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
-import {  throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -23,8 +23,15 @@ export class DataService {
     return throwError(errorMessage);
   }
 
-  public sendGetRequest(){
-    const options = { params: new HttpParams({fromString: "_ville=&_lycee="}) };
+
+  public sendGetRequest(ville: string, lycee: string){
+    const options = { params: new HttpParams({fromString: `ville=${ville}&lycee=${lycee}`}) };
     return this.httpClient.get<any>(this.REST_API_SERVER, options).pipe(retry(3), catchError(this.handleError));
   }
+
+  public sendGetRequestById(id: string){
+    let url = `${this.REST_API_SERVER}/${id}`
+    return this.httpClient.get<any>(url).pipe(retry(3), catchError(this.handleError));
+  }
+
 }

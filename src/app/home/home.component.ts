@@ -13,17 +13,26 @@ export class HomeComponent implements OnInit {
   public investments = [];
   public displayedColumns = [ 'id' , 'titreoperation', 'lycee', 'ville', 'etat_d_avancement', 'detail'];
  
+  ville: string = '';
+  lycee: string = '';
+
   constructor(private dataService: DataService) { }
-
+  
   ngOnInit() {
-
-    this.dataService.sendGetRequest().subscribe(data=>{
+    
+    this.dataService.sendGetRequest(this.ville, this.lycee).subscribe(data=>{
       this.investments = data['hydra:member'] ;
       console.log(this.investments);
     },
-    (error) => console.log(error),
-    () => console.log("Success !")
+    (error) => console.log(error)
     )
   }
   
+  filter() {
+    this.dataService.sendGetRequest(this.ville, this.lycee).subscribe(data=>{
+      this.investments = data['hydra:member'] ;
+    },
+    (error) => console.log(error),
+    )
+  }
 }
