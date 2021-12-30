@@ -1,5 +1,43 @@
-<a style="padding-left: 13px;" mat-a routerLink="/"> <-retour</a>
+<a style="padding-left: 13px;" mat-a routerLink="/"> <- Retour</a>
+
+<br>
 
 <div style="padding: 13px;">
-    {{ investment.ppi }}
+
+    <mat-card style="margin-top:12px;">
+        <mat-card-header>
+            <mat-card-title>
+                {{ investment.titreoperation }}
+            </mat-card-title>
+            <mat-card-subtitle>
+                Mandataire : {{ investment.mandataire }} 
+                <br>
+                Entreprise : {{ investment.entreprise }}
+                <br>
+                Maitrise d'oeuvre : {{ investment.maitrise_d_oeuvre }} 
+                <br>
+                Lycée : {{ investment.lycee }} 
+                <br>
+                {{ investment.ville }} 
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-card-subtitle>
+               <b> Année d'individulisation</b> : {{ investment.annee_d_individualisation }} -
+               <b> Année de livraison</b> : {{ investment.annee_de_livraison }} - 
+               <b> Code UAI</b> : {{ investment.codeuai }}
+            </mat-card-subtitle>
+            <mat-list role="list">
+                <mat-list-item>Notification du marché : {{ investment.notification_du_marche }} </mat-list-item>
+                <mat-list-item>Longitude : {{ investment.longitude }} </mat-list-item>
+                <mat-list-item>Latitude : {{ investment.latitude }} </mat-list-item>
+                <mat-list-item>État d'avancement : {{ investment.etat_d_avancement }} </mat-list-item>
+                <mat-list-item>PPI : {{ investment.ppi }} </mat-list-item>
+                <mat-list-item>Montant des ap : {{ investment.montant_des_ap_votes_en_meu }} </mat-list-item>
+                <mat-list-item>Attribution CAO : {{ investment.cao_attribution }} </mat-list-item>
+                <mat-list-item>Enveloppe : {{ investment.enveloppe_prev_en_meu }} </mat-list-item>
+                <mat-list-item>Mode de dévolution : {{ investment.mode_de_devolution }} </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
 </div>

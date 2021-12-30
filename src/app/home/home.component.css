@@ -32,3 +32,15 @@
   #detail{
     text-align: center;
   }
+
+  button{
+    border: lightgray solid 1px;
+  }
+
+  #filter{
+    margin-left: 1%;
+  }
+
+  #filter input{
+    margin-bottom: 1%;
+  }

@@ -1,10 +1,12 @@
 <div style="padding: 2px;">
 
-    <form>
+    <div id="filter">
         <input [(ngModel)]="ville" type="text" id="ville" name="ville" placeholder="Ville">
+        <br>
         <input [(ngModel)]="lycee" type="text" id="lycee" name="lycee" placeholder="Lycée">
-        <button (click)="filter()">Filtrer</button>
-    </form>
+        <br>
+        <button mat-button (click)="filter()">Filtrer</button>
+    </div>
 
     <br>
 
@@ -46,5 +48,6 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         
     </table>
+
    
 </div>
